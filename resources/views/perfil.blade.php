@@ -52,7 +52,7 @@
             <p id="per-tel">Juanito Alimaña</p> 
 
             <h3>Email: </h3>
-            <p id="per-ema">Juanito Alimaña</p> 
+            <p id="per-ema">Juanita al</p> 
          </div>
 
          <button class="boton" id="open">Actualizar Datos</button>
