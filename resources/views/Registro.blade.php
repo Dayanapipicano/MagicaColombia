@@ -14,7 +14,7 @@
     <div class="formulario">
         <img class="avatar" src="{{ asset('local_storage/img/logo.png') }}"  alt="Logo de empresa">
         <h1>Registrate</h1>
-        <form action="/register" method="POST">
+        <form action="{{ route('register') }}" method="POST">
                @csrf
                 <label>Usuario</label>
                 <input type="text" name="Usuario" placeholder="Ingrese tu Usuario">

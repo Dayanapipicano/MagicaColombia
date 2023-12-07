@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Imagen_Hsitoria;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 
 class CreateHistoryController extends Controller
@@ -44,5 +45,34 @@ class CreateHistoryController extends Controller
     
         return view('preview', ['imagen' => $imagen, 'texto' => $texto]);
     }
+    public function crearh(Request $request)
+{
+
+    $request->validate([
+        'texto' => 'required',
+        'imagen' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+   
+
+    $historia = new Imagen_Hsitoria();
+    $historia->texto = $request->texto;
+
+    if ($request->hasFile('imagen')) {
+        $imagenPath = $request->file('imagen')->store('public/imagenes');
+        $historia->imagen = $imagenPath;
+    }
+
+    $historia->save();
+
+    return response()->json(['message' => 'Historia creada con éxito']); 
+
+}
+
+public function mostrarh()
+{
+    $historias = Imagen_Hsitoria::all();
+
+    return response()->json($historias);
+}
     
 }    

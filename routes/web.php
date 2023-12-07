@@ -24,7 +24,7 @@ Route::get('/login', function(){
     return view('Registro');
 });
 
-
+Route::get('historias', [CreateHistoryController::class, 'mostrarhistoria']);
 
 
 Route::get('/inicio', [IndexController::class, 'index'])->name('inicio');

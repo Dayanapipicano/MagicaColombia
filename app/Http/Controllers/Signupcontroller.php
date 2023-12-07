@@ -23,7 +23,7 @@ class Signupcontroller extends Controller
             'user'=> 'required|unique:users,usuario',
                 'email'=> 'required|unique:users,email',
                 'password'=> 'required|min:8',
-    
+            
     
         ]);
     

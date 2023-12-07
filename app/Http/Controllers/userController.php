@@ -20,6 +20,7 @@ class userController extends Controller
             'usuario' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
+    
         ]);
 
         $user = User::create($validatedData);

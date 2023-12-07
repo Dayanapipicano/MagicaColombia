@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Imagen_Hsitoria extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'texto',
+        'imagen',
+
+    ];
+
 }

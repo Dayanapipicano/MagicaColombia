@@ -13,7 +13,7 @@
         <img class="avatar" src="{{ asset('local_storage/img/logo.png') }}"  alt="Logo de empresa">
         <h1>Inicio de sesión</h1>
         <form method="post" action="/login">
-               
+               @csrf
                 <label>Nombre de usuario</label>
                 <input type="text" placeholder="Ingrese su nombre de usuario">
                 
