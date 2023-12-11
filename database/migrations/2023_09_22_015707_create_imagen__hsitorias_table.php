@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('imagen__hsitorias', function (Blueprint $table) {
             $table->id();
             $table->text('texto');
-            $table->titulo('titulo');
+            $table->string('titulo');
             $table->timestamps();
         });
     }
