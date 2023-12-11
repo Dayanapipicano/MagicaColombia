@@ -50,24 +50,17 @@ class CreateHistoryController extends Controller
 
     $request->validate([
         'texto' => 'required',
-        'imagen' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        'titulo' => 'required',
     ]);
-   
-
+    
     $historia = new Imagen_Hsitoria();
     $historia->texto = $request->texto;
-
-    if ($request->hasFile('imagen')) {
-        $imagenPath = $request->file('imagen')->store('public/imagenes');
-        $historia->imagen = $imagenPath;
-    }
-
+    $historia->titulo = $request->titulo;
+    
     $historia->save();
-
-    return response()->json(['message' => 'Historia creada con éxito']); 
-
+    
+    return response()->json(['message' => 'Historia creada con éxito']);
 }
-
 public function mostrarh()
 {
     $historias = Imagen_Hsitoria::all();

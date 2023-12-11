@@ -11,6 +11,7 @@ class Imagen_Hsitoria extends Model
 
     protected $fillable = [
         'texto',
+        'titulo',
         'imagen',
 
     ];
